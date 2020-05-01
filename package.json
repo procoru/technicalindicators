@@ -12,7 +12,9 @@
     "test:watch": "mocha --watch --compilers js:babel-register --require keras-js",
     "generateDts": "dts-bundle --name indicators --main declarations/index.d.ts --out generated.d.ts --baseDir declarations --outputAsModuleFolder",
     "build-lib": "babel-node --presets es2015 rollup.js",
-    "start": "sh test.sh"
+    "start": "sh test.sh",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -131,6 +133,8 @@
   "dependencies": {
     "@types/node": "^6.0.96",
     "babel-polyfill": "^6.23.0",
-    "keras-js": "^1.0.2"
-  }
+    "keras-js": "^1.0.2",
+    "snyk": "^1.316.1"
+  },
+  "snyk": true
 }
